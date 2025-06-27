@@ -122,6 +122,7 @@ function FormElementOptions({
                       label: 'Select input type',
                       fieldType: 'Select',
                       options: inputTypes,
+                      csvoptions: 'text,email,url,number,password,tel',
                       required: true,
                       placeholder: 'Select input type',
                     }}
@@ -192,6 +193,18 @@ function FormElementOptions({
                   form={form}
                 />
               )}
+                {formElement.fieldType === 'Select' && (
+                  <RenderFormElement
+                    formElement={{
+                      name: 'csvoptions',
+                      label: 'Enter list of options in CSV format.',
+                      fieldType: 'Input',
+                      required: true,
+                      placeholder: 'Select input type',
+                    }}
+                    form={form}
+                  />
+                )}
               <div className="flex-row-start gap-4 pl-1">
                 <RenderFormElement
                   formElement={{

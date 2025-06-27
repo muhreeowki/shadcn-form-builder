@@ -11,7 +11,7 @@ import type * as React from 'react';
 import { Textarea } from '@/components/ui/textarea';
 import { Input } from '@/components/ui/input';
 import type { ControllerRenderProps, UseFormReturn } from 'react-hook-form';
-import type { FormElement } from '@/form-builder/form-types';
+import type { FormElement, Option } from '@/form-builder/form-types';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Switch } from '@/components/ui/switch';
 import {
@@ -380,7 +380,11 @@ export const RenderFormElement = ({
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  {formElement.options.map(({ label, value }) => (
+                  {formElement.csvoptions.length > 0 ? formElement.csvoptions.trim().split(',').map((name: string): Option => ({value: name.trim().toLowerCase(), label: name.trim()})).map(({label, value}) => (
+                    <SelectItem key={label} value={value}>
+                      {label}
+                    </SelectItem>
+                  )) : formElement.options.map(({ label, value }) => (
                     <SelectItem key={label} value={value}>
                       {label}
                     </SelectItem>

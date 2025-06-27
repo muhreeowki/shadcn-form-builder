@@ -54,6 +54,7 @@ export const defaultFormElements: Record<
       { value: '1', label: 'Option 1' },
       { value: '2', label: 'Option 2' },
     ],
+    csvoptions: 'Option 1,Option 2',
   },
   MultiSelect: {
     label: 'Select multiple options',

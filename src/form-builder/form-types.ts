@@ -9,7 +9,7 @@ import {
   ToggleGroupSingleProps,
 } from '@radix-ui/react-toggle-group';
 
-type Option = { value: string; label: string };
+export type Option = { value: string; label: string };
 //------------------------------------------------------------
 type SharedFormProps = {
   name: string;
@@ -89,6 +89,7 @@ type Select = {
    * Options for the select field
    */
   options: Option[];
+  csvoptions: string;
   placeholder: string;
 } & React.SelectHTMLAttributes<HTMLSelectElement> &
   SharedFormProps;
