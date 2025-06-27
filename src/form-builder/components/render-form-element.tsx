@@ -212,7 +212,12 @@ export const RenderFormElement = ({
                   onValueChange={field.onChange}
                   defaultValue={field.value}
                 >
-                  {formElement.options.map(({ label, value }) => (
+                  {formElement.csvoptions.length > 0 ? formElement.csvoptions.trim().split(',').map((name: string): Option => ({value: name.trim().toLowerCase(), label: name.trim()})).map(({label, value}) => (
+                    <div key={value} className="flex items-center gap-x-2">
+                      <RadioGroupItem value={value} id={value} />
+                      <Label htmlFor={value}>{label}</Label>
+                    </div>
+                  )) : formElement.options.map(({ label, value }) => (
                     <div key={value} className="flex items-center gap-x-2">
                       <RadioGroupItem value={value} id={value} />
                       <Label htmlFor={value}>{label}</Label>

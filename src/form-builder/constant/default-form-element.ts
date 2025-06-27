@@ -29,6 +29,7 @@ export const defaultFormElements: Record<
       { value: '2', label: 'Option 2' },
       { value: '3', label: 'Option 3' },
     ],
+    csvoptions: 'Option 1, Option 2, Option 3',
   },
   ToggleGroup: {
     label: 'Pick multiple days',
@@ -54,7 +55,7 @@ export const defaultFormElements: Record<
       { value: '1', label: 'Option 1' },
       { value: '2', label: 'Option 2' },
     ],
-    csvoptions: 'Option 1,Option 2',
+    csvoptions: 'Option 1, Option 2',
   },
   MultiSelect: {
     label: 'Select multiple options',

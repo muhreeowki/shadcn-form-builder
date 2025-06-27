@@ -52,6 +52,7 @@ type Checkbox = {
 type RadioGroup = {
   fieldType: 'RadioGroup';
   options: Option[];
+  csvoptions: string;
 } & RadioGroupProps &
   SharedFormProps;
 //------------------------------
